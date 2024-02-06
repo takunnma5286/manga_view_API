@@ -1,0 +1,42 @@
+{
+  "info": {
+    "v": 1,
+    "adminname": [
+      "takunnma"
+    ]
+  },
+  "OAuth": {
+    "1": {
+      "password": "114514"
+    }
+  },
+  "token": {
+    "114514": {
+      "level": 5
+    },
+    "d6124aac-f66b-4b0c-9a32-6a2d66245f34": {
+      "level": 5
+    }
+  },
+  "manga": {
+    "1": {
+      "meta": {
+        "name": "たくんま大冒険！",
+        "writer": [
+          "たくんま",
+          "めぐ"
+        ]
+      },
+      "page": 10,
+      "uploader": 1,
+      "level": 0,
+      "viewlevel": 1
+    }
+  },
+  "user": {
+    "1": {
+      "name": "たくんま",
+      "level": 5
+    }
+  }
+}
