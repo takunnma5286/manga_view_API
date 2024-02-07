@@ -108,7 +108,7 @@ app.get('/login', (req, res) => {
     }
     let Token = crypto.randomUUID(); // TokenはUUID
     while (Token in database.token){
-        let Token = crypto.randomUUID(); // TokenはUUID
+        Token = crypto.randomUUID(); // TokenはUUID
     }
     writedatabase(["token",Token,"level"],database.user[id].level)
     writedatabase(["token",Token,"user"],id)
