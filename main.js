@@ -146,17 +146,15 @@ app.get('/getmanga', (req, res) => {
     // pngファイルであること前提
     // manga/漫画のID/ページ数.png
     const fileName = "./manga/" + id + "/" + page + ".png";
-    // ファイルのパスを構築
-    const filePath = path.join(__dirname, 'files', fileName);
     // ファイルが存在するか確認
-    fs.access(filePath, fs.constants.R_OK, (err) => {
+    fs.access(fileName, fs.constants.R_OK, (err) => {
         if (err) {
-        return res.status(404).send('指定されたファイルが見つかりません。');
+        return res.status(500).send('指定されたファイルが見つかりませんでした、database.jsonと実際に存在するファイルに違いがあります、見直してください'); //本来あるべきファイルがないので、サーバー側のエラーとして500を出す
         }
-
         // ファイルを読み取り、レスポンスとして送信
-        const stream = fs.createReadStream(filePath);
+        const stream = fs.createReadStream(fileName);
         stream.pipe(res);
+        writedatabase(["manga",id,"viewcount"],database.manga[id].viewcount)
     });
 });
 
